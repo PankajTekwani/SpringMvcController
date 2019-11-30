@@ -1,15 +1,10 @@
 package com.example.demo;
 
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-
 
 @Controller
 public class ControllerImpl {
@@ -26,7 +21,8 @@ public class ControllerImpl {
         return "next";
     }
     
-    @RequestMapping(value={"/gc/reveal","/gc/reveal/{claimcode}","/gc/reveal/{claimcode}/{asin}"})
+//    @RequestMapping(value={"/gc/reveal","/gc/reveal/{claimcode}","/gc/reveal/{claimcode}/{asin}"})
+    @RequestMapping(value={"/gc/reveal","/gc/reveal/{claimcode}","/gc/reveal/{claimcode}/{asin}","/gc/reveal/**"})
     public String reveal(@ModelAttribute("request") RevealRequest request,
 			    		Model model) {
     	System.out.println("ClaimCode: "+request.getClaimcode());
